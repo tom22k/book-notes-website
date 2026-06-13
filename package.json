@@ -1,0 +1,20 @@
+{
+	"name": "book-notes",
+	"module": "index.ts",
+	"type": "module",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "bun run --watch index.ts"
+	},
+	"private": true,
+	"devDependencies": {
+		"@types/bun": "latest",
+		"@types/ejs": "^3.1.5"
+	},
+	"peerDependencies": {
+		"typescript": "^5"
+	},
+	"dependencies": {
+		"ejs": "^6.0.1"
+	}
+}
