@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title><%= title || "Book Notes" %></title>
+	<link rel="icon" href="/public/assets/icons/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="/public/styles/main.css">
+	<% if (typeof css !== "undefined" && css) { %>
+		<% if (Array.isArray(css)) { %>
+			<% css.forEach(function(c){ %>
+				<link rel="stylesheet" href="<%= c %>">
+			<% }) %>
+		<% } else { %>
+			<link rel="stylesheet" href="<%= css %>">
+		<% } %>
+	<% } %>
+</head>
+
+<body>
+	<header>
+		<nav>
+			<a href="/books">List</a> | <a href="/books/add">Add Book</a>
+		</nav>
+	</header>
+	<main>

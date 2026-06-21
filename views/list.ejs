@@ -1,0 +1,27 @@
+<%- include("partials/header", { title: "Books", css: ["/public/styles/list.css"] }) %>
+<h1>Books</h1>
+<% if (locals.books && books.length > 0) { %>
+	<div class="book-list">
+		<% books.forEach(function(book) { %>
+			<div>
+				<img src="https://covers.openlibrary.org/b/isbn/<%= book.isbn %>-S.jpg" alt="<%= book.title %> cover image" height="50px">
+				<%= book.title %> by <%= book.author %>
+				<form action="/books/<%= book.id %>" method="get" style="display:inline">
+					<button type="submit">Details</button>
+				</form>
+				<form action="/books/<%= book.id %>/edit" method="get" style="display:inline">
+					<button type="submit">Edit</button>
+				</form>
+				<form action="/books/<%= book.id %>/delete" method="post" style="display:inline">
+					<button class="danger" type="submit">Delete</button>
+				</form>
+			</div>
+		<% }) %>
+	</div>
+<% } else { %>
+	<p>No books yet.</p>
+	<form action="/books/add" method="get">
+		<button type="submit">Add books</button>
+	</form>
+<% } %>
+<%- include("partials/footer") %>

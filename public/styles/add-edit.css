@@ -1,0 +1,23 @@
+:root {
+	--border: #e6e9ef;
+	--fg: white;
+}
+
+form {
+	background: var(--fg);
+	padding: 1rem;
+	border: 1px solid var(--border);
+	border-radius: 6px;
+}
+
+form label {
+	font-weight: 600;
+}
+
+.star {
+	cursor: pointer;
+}
+
+.star:hover {
+	opacity: 0.8;
+}

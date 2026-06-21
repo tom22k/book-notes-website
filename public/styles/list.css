@@ -1,0 +1,25 @@
+:root {
+	--accent: #2b6cb0;
+	--border: #e6e9ef;
+}
+
+ul.book-list {
+	list-style: disc;
+	margin-left: 1.25rem;
+}
+
+ul.book-list li {
+	margin: 0.5rem 0;
+	padding: 0.25rem 0;
+	border-bottom: 1px dashed var(--border);
+}
+
+.book-actions {
+	margin-left: 0.5rem;
+	font-size: .9rem;
+}
+
+.book-actions a {
+	margin-right: 0.5rem;
+	color: var(--accent);
+}

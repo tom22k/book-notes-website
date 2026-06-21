@@ -1,0 +1,29 @@
+<%- include("partials/header", { title: book.title, css: ["/public/styles/details.css"] }) %>
+<article>
+	<img src="https://covers.openlibrary.org/b/isbn/<%= book.isbn %>-M.jpg" alt="<%= book.title %> cover image" height="150px">
+	<h1><%= book.title %></h1>
+	<p>By <%= book.author %></p>
+	<section>
+		<p>Published in <%= book.publish_year %></p>
+		<p>Finished on <%= book.read_date.toDateString() %></p>
+    <div class="rating">
+			<% for (let i = 0; i < 5; i++) { %>
+				<span class="star <%= i < book.rating ? "filled" : "" %>">★</span>
+			<% } %>
+    </div>
+		<h3>Notes</h3>
+		<p><%= book.notes || "No notes." %></p>
+	</section>
+	<p class="book-actions">
+		<form action="/books" method="get" style="display:inline">
+			<button type="submit">Back to list</button>
+		</form>
+		<form action="/books/<%= book.id %>/edit" method="get" style="display:inline">
+			<button type="submit">Edit</button>
+		</form>
+		<form action="/books/<%= book.id %>/delete" method="post" style="display:inline">
+			<button class="danger" type="submit">Delete</button>
+		</form>
+	</p>
+</article>
+<%- include("partials/footer") %>

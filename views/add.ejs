@@ -1,0 +1,29 @@
+<%- include("partials/header", { title: "Add Book", css: ["/public/styles/add-edit.css"] }) %>
+<h1>Add Book</h1>
+<form action="/books/add" method="post">
+	<label>ISBN<br>
+		<input type="text" name="isbn" required>
+	</label>
+	<br>
+	<label>Read date<br>
+		<input type="date" name="readDate" value="<%= new Date().toISOString().slice(0, 10) %>">
+	</label>
+	<br>
+	<label>Rating<br>
+    <div class="rating-input">
+			<% for (let i = 1; i < 6; i++) { %>
+				<span onclick="updateRating(<%= i %>)" class="star">★</span>
+			<% } %>
+    </div>
+		<textarea id="output" name="rating" style="display: none;"></textarea>
+	</label>
+	<br>
+	<label>Notes<br>
+		<textarea name="notes" rows="6"></textarea>
+	</label>
+	<br>
+	<button type="submit">Create</button>
+</form>
+
+<script src="/public/scripts/add-edit.js" charset="UTF-8"></script>
+<%- include("partials/footer") %>

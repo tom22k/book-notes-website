@@ -1,0 +1,15 @@
+:root {
+	--border: #e6e9ef;
+	--fg: white;
+}
+
+article {
+	background: var(--fg);
+	padding: 1rem;
+	border-radius: 6px;
+	border: 1px solid var(--border);
+}
+
+article h1 {
+	margin-top: 0;
+}
