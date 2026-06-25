@@ -5,7 +5,7 @@ import type { NumericLiteral } from "typescript";
 const PORT = 3000;
 const API_URL = "https://openlibrary.org";
 const headers = new Headers({
-	"User-Agent": "BookNotes (dazzler_undaunted553@silomails.com)"
+	"User-Agent": process.env.API_USER_AGENT,
 });
 
 const sql = new SQL({
