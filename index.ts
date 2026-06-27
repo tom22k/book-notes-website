@@ -1,9 +1,13 @@
 import { serve, file, SQL } from "bun";
 import ejs from "ejs";
-import type { NumericLiteral } from "typescript";
 
 const PORT = 3000;
 const API_URL = "https://openlibrary.org";
+
+if (!process.env.API_USER_AGENT) {
+	throw new Error("API_USER_AGENT is not set in the environment variables.");
+}
+
 const headers = new Headers({
 	"User-Agent": process.env.API_USER_AGENT,
 });
